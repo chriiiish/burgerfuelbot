@@ -1,6 +1,8 @@
 from websocket import create_connection
 import urllib.request
 import json
+import responses
+from responses import *
 import sys
 
 # Check to make sure we're in Python 3!
@@ -46,6 +48,10 @@ socket = create_connection(urls['socket'])
 run = True
 
 print("Monitoring...")
+
+# Load all the response modules
+responseClasses = responses.__all__
+
 try:
 	while run:
 		result = socket.recv()
