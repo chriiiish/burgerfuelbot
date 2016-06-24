@@ -28,6 +28,8 @@ Monitoring...`
 
 That means you're running!
 
+**To stop the bot, use Ctrl+C**
+
 
 ----------
 
