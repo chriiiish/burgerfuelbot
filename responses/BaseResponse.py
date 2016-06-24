@@ -3,9 +3,10 @@ class ResponseBase:
 	accept = []
 	parent = None
 
-	# Constructor - Passed in parent (used to send things back to slack
-	def __init__(self, parent):
-		self.parent = parent
+	# Constructor - 
+	def __init__(self):
+		#self.parent = parent
+		pass
 
 	# This is called when any message (that has been specified by accept) has been received.
 	def receive_message(self, message):
@@ -13,6 +14,5 @@ class ResponseBase:
 
 	# Sends things back to slack
 	def send_message(self, message):
-		self.parent.send(message)
-	
+		pass	
 		
