@@ -21,9 +21,13 @@ Once you've saved that - start up the server with `python3 burgerfuelbot.py`.
 
 
 You should see some output along the lines of:
+
 `Connecting to Slack...
+
 Connection to Slack Successful
+
 Opening connection to Slack Websocket Engine...
+
 Monitoring...`
 
 
