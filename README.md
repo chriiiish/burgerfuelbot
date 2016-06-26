@@ -1,4 +1,4 @@
-**Disclaimer - This doesn't work yet ;P)**
+**Disclaimer - This doesn't work yet ;P**
 #burgerfuelbot#
 Initially intended as a bot to manage our Burgerfuel eating habits this is a bot designed to connect to [Slack](https://slack.com/) and should be generic enough to handle all sorts of applications. Just because we use it for Burgerfuel doesn't mean you can't use it for anything else ;)
 
