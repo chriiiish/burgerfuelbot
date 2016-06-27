@@ -55,19 +55,21 @@ responseClasses = []
 for moduleName in responses.__all__:
 	for name, obj in inspect.getmembers(sys.modules["responses." + moduleName]):
 		if name == moduleName and inspect.isclass(obj):
-			responseClasses.append(obj)
+			responseClasses.append(obj(socket, slackinfo))
 
 # Listen on the websocket
 try:
 	while run:
 		result = socket.recv()
 		jsonresult = json.loads(result)
-		print("Received %s" % str(jsonresult['type']))
+		if "reply_to" in jsonresult: print("Received Message Confirmation (#%s)" % jsonresult['reply_to'])	
+		if "type" in jsonresult: print("Received %s" % str(jsonresult['type']))
 		
 		# Start up response modules
 		for responseClass in responseClasses:
 			if len(responseClass.accept) == 0 or len([x for x in responseClass.accept if x.upper() == jsonresult['type'].upper()]) > 0:
-				responseClass.receive_message(responseClass, jsonresult)
+				if "type" in jsonresult:
+					responseClass.receive_message(jsonresult)
 
 except KeyboardInterrupt as interrupt:
 	print("")

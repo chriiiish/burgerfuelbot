@@ -2,10 +2,8 @@ from responses import BaseResponse
 
 class GenericResponse(BaseResponse.ResponseBase):
 	accept = []
-	parent = None
-	latestreceived = "notset"
+	socket = None
+	slackinfo = None
 
 	def receive_message(self, message):
-		print(self.latestreceived)
-		self.latestreceived = message['type'] 
-		print(self.latestreceived)
+		pass
